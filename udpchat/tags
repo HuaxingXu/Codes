@@ -1,0 +1,113 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALLCONFS	nbproject/Makefile-impl.mk	/^ALLCONFS=Debug Release $/;"	m
+AS	nbproject/Makefile-Debug.mk	/^AS=as$/;"	m
+AS	nbproject/Makefile-Release.mk	/^AS=as$/;"	m
+ASFLAGS	nbproject/Makefile-Debug.mk	/^ASFLAGS=$/;"	m
+ASFLAGS	nbproject/Makefile-Release.mk	/^ASFLAGS=$/;"	m
+BUILD_SUBPROJECTS	nbproject/Makefile-impl.mk	/^BUILD_SUBPROJECTS=${BUILD_SUBPROJECTS_${SUBPROJECTS}}$/;"	m
+BUILD_SUBPROJECTS_	nbproject/Makefile-impl.mk	/^BUILD_SUBPROJECTS_=.build-subprojects$/;"	m
+BUILD_SUBPROJECTS_NO	nbproject/Makefile-impl.mk	/^BUILD_SUBPROJECTS_NO=$/;"	m
+CC	Makefile	/^CC=g++$/;"	m
+CC	nbproject/Makefile-Debug.mk	/^CC=gcc$/;"	m
+CC	nbproject/Makefile-Release.mk	/^CC=gcc$/;"	m
+CCADMIN	nbproject/Makefile-Debug.mk	/^CCADMIN=CCadmin$/;"	m
+CCADMIN	nbproject/Makefile-Release.mk	/^CCADMIN=CCadmin$/;"	m
+CCC	nbproject/Makefile-Debug.mk	/^CCC=g++$/;"	m
+CCC	nbproject/Makefile-Release.mk	/^CCC=g++$/;"	m
+CCFLAGS	Makefile	/^CCFLAGS=-Wall$/;"	m
+CCFLAGS	nbproject/Makefile-Debug.mk	/^CCFLAGS=$/;"	m
+CCFLAGS	nbproject/Makefile-Release.mk	/^CCFLAGS=$/;"	m
+CFLAGS	nbproject/Makefile-Debug.mk	/^CFLAGS=$/;"	m
+CFLAGS	nbproject/Makefile-Release.mk	/^CFLAGS=$/;"	m
+CLEAN_SUBPROJECTS	nbproject/Makefile-impl.mk	/^CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}$/;"	m
+CLEAN_SUBPROJECTS_	nbproject/Makefile-impl.mk	/^CLEAN_SUBPROJECTS_=.clean-subprojects$/;"	m
+CLEAN_SUBPROJECTS_NO	nbproject/Makefile-impl.mk	/^CLEAN_SUBPROJECTS_NO=$/;"	m
+CND_ARTIFACT_DIR_Debug	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_DIR_Debug=dist\/Debug\/GNU-Linux-x86$/;"	m
+CND_ARTIFACT_DIR_Release	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_DIR_Release=dist\/Release\/GNU-Linux-x86$/;"	m
+CND_ARTIFACT_NAME_Debug	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_NAME_Debug=udpchat$/;"	m
+CND_ARTIFACT_NAME_Release	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_NAME_Release=udpchat$/;"	m
+CND_ARTIFACT_PATH_Debug	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_PATH_Debug=dist\/Debug\/GNU-Linux-x86\/udpchat$/;"	m
+CND_ARTIFACT_PATH_Release	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_PATH_Release=dist\/Release\/GNU-Linux-x86\/udpchat$/;"	m
+CND_BASEDIR	nbproject/Makefile-variables.mk	/^CND_BASEDIR=`pwd`$/;"	m
+CND_BUILDDIR	nbproject/Makefile-Debug.mk	/^CND_BUILDDIR=build$/;"	m
+CND_BUILDDIR	nbproject/Makefile-Release.mk	/^CND_BUILDDIR=build$/;"	m
+CND_BUILDDIR	nbproject/Makefile-variables.mk	/^CND_BUILDDIR=build$/;"	m
+CND_CONF	nbproject/Makefile-Debug.mk	/^CND_CONF=Debug$/;"	m
+CND_CONF	nbproject/Makefile-Release.mk	/^CND_CONF=Release$/;"	m
+CND_DISTDIR	nbproject/Makefile-Debug.mk	/^CND_DISTDIR=dist$/;"	m
+CND_DISTDIR	nbproject/Makefile-Release.mk	/^CND_DISTDIR=dist$/;"	m
+CND_DISTDIR	nbproject/Makefile-variables.mk	/^CND_DISTDIR=dist$/;"	m
+CND_DLIB_EXT	nbproject/Makefile-Debug.mk	/^CND_DLIB_EXT=so$/;"	m
+CND_DLIB_EXT	nbproject/Makefile-Release.mk	/^CND_DLIB_EXT=so$/;"	m
+CND_PACKAGE_DIR_Debug	nbproject/Makefile-variables.mk	/^CND_PACKAGE_DIR_Debug=dist\/Debug\/GNU-Linux-x86\/package$/;"	m
+CND_PACKAGE_DIR_Release	nbproject/Makefile-variables.mk	/^CND_PACKAGE_DIR_Release=dist\/Release\/GNU-Linux-x86\/package$/;"	m
+CND_PACKAGE_NAME_Debug	nbproject/Makefile-variables.mk	/^CND_PACKAGE_NAME_Debug=udpchat.tar$/;"	m
+CND_PACKAGE_NAME_Release	nbproject/Makefile-variables.mk	/^CND_PACKAGE_NAME_Release=udpchat.tar$/;"	m
+CND_PACKAGE_PATH_Debug	nbproject/Makefile-variables.mk	/^CND_PACKAGE_PATH_Debug=dist\/Debug\/GNU-Linux-x86\/package\/udpchat.tar$/;"	m
+CND_PACKAGE_PATH_Release	nbproject/Makefile-variables.mk	/^CND_PACKAGE_PATH_Release=dist\/Release\/GNU-Linux-x86\/package\/udpchat.tar$/;"	m
+CND_PLATFORM	nbproject/Makefile-Debug.mk	/^CND_PLATFORM=GNU-Linux-x86$/;"	m
+CND_PLATFORM	nbproject/Makefile-Release.mk	/^CND_PLATFORM=GNU-Linux-x86$/;"	m
+CND_PLATFORM_Debug	nbproject/Makefile-variables.mk	/^CND_PLATFORM_Debug=GNU-Linux-x86$/;"	m
+CND_PLATFORM_Release	nbproject/Makefile-variables.mk	/^CND_PLATFORM_Release=GNU-Linux-x86$/;"	m
+CONF	nbproject/Makefile-impl.mk	/^CONF=${DEFAULTCONF}$/;"	m
+CP	nbproject/Makefile-Debug.mk	/^CP=cp$/;"	m
+CP	nbproject/Makefile-Release.mk	/^CP=cp$/;"	m
+CXX	nbproject/Makefile-Debug.mk	/^CXX=g++$/;"	m
+CXX	nbproject/Makefile-Release.mk	/^CXX=g++$/;"	m
+CXXFLAGS	nbproject/Makefile-Debug.mk	/^CXXFLAGS=$/;"	m
+CXXFLAGS	nbproject/Makefile-Release.mk	/^CXXFLAGS=$/;"	m
+DEFAULTCONF	nbproject/Makefile-impl.mk	/^DEFAULTCONF=Debug$/;"	m
+FC	nbproject/Makefile-Debug.mk	/^FC=gfortran$/;"	m
+FC	nbproject/Makefile-Release.mk	/^FC=gfortran$/;"	m
+FFLAGS	nbproject/Makefile-Debug.mk	/^FFLAGS=$/;"	m
+FFLAGS	nbproject/Makefile-Release.mk	/^FFLAGS=$/;"	m
+FRAME_SIZE	Voice.h	13;"	d
+FRAME_SIZE	main.cpp	14;"	d	file:
+GREP	nbproject/Makefile-Debug.mk	/^GREP=grep$/;"	m
+GREP	nbproject/Makefile-Release.mk	/^GREP=grep$/;"	m
+HEAD_SIZE	main.cpp	15;"	d	file:
+LDFLAGS	Makefile	/^LDFLAGS=-lspeex -lm$/;"	m
+LDLIBSOPTIONS	nbproject/Makefile-Debug.mk	/^LDLIBSOPTIONS=$/;"	m
+LDLIBSOPTIONS	nbproject/Makefile-Release.mk	/^LDLIBSOPTIONS=$/;"	m
+MAX_CHAR_SIZE	Voice.h	15;"	d
+MAX_SHORT_SIZE	Voice.h	14;"	d
+MKDIR	nbproject/Makefile-Debug.mk	/^MKDIR=mkdir$/;"	m
+MKDIR	nbproject/Makefile-Release.mk	/^MKDIR=mkdir$/;"	m
+NM	nbproject/Makefile-Debug.mk	/^NM=nm$/;"	m
+NM	nbproject/Makefile-Release.mk	/^NM=nm$/;"	m
+OBJECTDIR	nbproject/Makefile-Debug.mk	/^OBJECTDIR=${CND_BUILDDIR}\/${CND_CONF}\/${CND_PLATFORM}$/;"	m
+OBJECTDIR	nbproject/Makefile-Release.mk	/^OBJECTDIR=${CND_BUILDDIR}\/${CND_CONF}\/${CND_PLATFORM}$/;"	m
+OBJECTFILES	nbproject/Makefile-Debug.mk	/^OBJECTFILES= \\$/;"	m
+OBJECTFILES	nbproject/Makefile-Release.mk	/^OBJECTFILES= \\$/;"	m
+PROJECTNAME	nbproject/Makefile-impl.mk	/^PROJECTNAME=udpchat$/;"	m
+RANLIB	nbproject/Makefile-Debug.mk	/^RANLIB=ranlib$/;"	m
+RANLIB	nbproject/Makefile-Release.mk	/^RANLIB=ranlib$/;"	m
+SUBPROJECTS	nbproject/Makefile-impl.mk	/^SUBPROJECTS=${SUB_${SUB}}$/;"	m
+SUB_no	nbproject/Makefile-impl.mk	/^SUB_no=NO$/;"	m
+UDPTRANSFER_H	UdpTransfer.h	9;"	d
+UdpTransfer	UdpTransfer.h	/^class UdpTransfer {$/;"	c
+VOICE_H	Voice.h	9;"	d
+Voice	Voice.cpp	/^Voice::Voice() {$/;"	f	class:Voice
+Voice	Voice.h	/^class Voice {$/;"	c
+checkReturnCode	nbproject/Package-Debug.bash	/^function checkReturnCode$/;"	f
+checkReturnCode	nbproject/Package-Release.bash	/^function checkReturnCode$/;"	f
+copyFileToTmpDir	nbproject/Package-Debug.bash	/^function copyFileToTmpDir$/;"	f
+copyFileToTmpDir	nbproject/Package-Release.bash	/^function copyFileToTmpDir$/;"	f
+decode	Voice.cpp	/^int Voice::decode(char encoded[], int size, $/;"	f	class:Voice
+encode	Voice.cpp	/^int Voice::encode(short in[], int size, $/;"	f	class:Voice
+m_pDbits	Voice.h	/^    SpeexBits m_pDbits;$/;"	m	class:Voice
+m_pDecFrameSize	Voice.h	/^    int m_pDecFrameSize;\/\/解压时的帧大小$/;"	m	class:Voice
+m_pDecState	Voice.h	/^    void *m_pDecState;$/;"	m	class:Voice
+m_pEbits	Voice.h	/^    SpeexBits m_pEbits;$/;"	m	class:Voice
+m_pEncFrameSize	Voice.h	/^    int m_pEncFrameSize;\/\/压缩时的帧大小$/;"	m	class:Voice
+m_pEncState	Voice.h	/^    void *m_pEncState;$/;"	m	class:Voice
+main	main.cpp	/^int main(int argc, char** argv) {$/;"	f
+makeDirectory	nbproject/Package-Debug.bash	/^function makeDirectory$/;"	f
+makeDirectory	nbproject/Package-Release.bash	/^function makeDirectory$/;"	f
+sh	nbproject/Makefile-variables.mk	/^ROOT:sh = test -f nbproject\/private\/Makefile-variables.mk || \\$/;"	m
+~Voice	Voice.cpp	/^Voice::~Voice() {$/;"	f	class:Voice
