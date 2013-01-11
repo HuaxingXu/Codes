@@ -9,7 +9,7 @@
  * int local_port 本地端口
  */
 UdpTransfer::UdpTransfer(const char *target_ip, int target_port, int local_port) {
-    printf("UdpTransfer::UdpTransfer()\n");
+//    printf("UdpTransfer::UdpTransfer()\n");
     //本地
     bzero(&this->m_localSin, sizeof(this->m_localSin));
     this->m_localSin.sin_family = AF_INET;
@@ -31,7 +31,7 @@ UdpTransfer::UdpTransfer(const char *target_ip, int target_port, int local_port)
 }
 
 UdpTransfer::~UdpTransfer() {
-    printf("UdpTransfer::~UdpTransfer()\n");
+//    printf("UdpTransfer::~UdpTransfer()\n");
     close(this->m_socket);
 }
 /**
@@ -40,7 +40,7 @@ UdpTransfer::~UdpTransfer() {
  * int target_port 对方的对外端口
  */
 void UdpTransfer::resetTarget(const char* target_ip, int target_port) {
-    printf("UdpTransfer::resetTarget()\n");
+//    printf("UdpTransfer::resetTarget()\n");
     this->m_targetSin.sin_addr.s_addr = inet_addr(target_ip);
     this->m_targetSin.sin_port = htons(target_port);
 }
@@ -52,7 +52,7 @@ void UdpTransfer::resetTarget(const char* target_ip, int target_port) {
  * return int 成功发送的字节数
  */
 int UdpTransfer::send(char data[], int size) {
-    printf("UdpTransfer::send()\n");
+//    printf("UdpTransfer::send()\n");
     if (size > UDP_MAX_SIZE) {
         size = UDP_MAX_SIZE;
     }
@@ -64,14 +64,14 @@ int UdpTransfer::send(char data[], int size) {
     bzero(buffer, UDP_MAX_SIZE);
     memcpy(buffer, data, size);
 
-    char ip[50];
-    strcpy(ip, (const char*)inet_ntoa(this->m_targetSin.sin_addr));
-    printf("send to %s:%d\n", ip, ntohs(this->m_targetSin.sin_port));
+//    char ip[50];
+//    strcpy(ip, (const char*)inet_ntoa(this->m_targetSin.sin_addr));
+//    printf("send to %s:%d\n", ip, ntohs(this->m_targetSin.sin_port));
 
     data_len = sendto(this->m_socket, buffer, size, 0,
             (struct sockaddr *)&this->m_targetSin, send_len);
     usleep(SLEEP_TIME);
-    printf("send data: %d bytes\n", data_len);
+//    printf("send data: %d bytes\n", data_len);
 
     return data_len;
 }
@@ -83,7 +83,7 @@ int UdpTransfer::send(char data[], int size) {
  * return int 接收到的字节数
  */
 int UdpTransfer::recv(char recv_buffer[], int max_recv_size) {
-    printf("UdpTransfer::recv()\n");
+//    printf("UdpTransfer::recv()\n");
     if (max_recv_size > UDP_MAX_SIZE) {
         max_recv_size = UDP_MAX_SIZE;
     }
@@ -98,7 +98,7 @@ int UdpTransfer::recv(char recv_buffer[], int max_recv_size) {
 
     char ip[50];
     strcpy(ip, (const char*)inet_ntoa(this->m_targetSin.sin_addr));
-    printf("recv from %s:%d\n", ip, ntohs(this->m_targetSin.sin_port));
+//    printf("recv from %s:%d\n", ip, ntohs(this->m_targetSin.sin_port));
 
     //保存收到的数据
     memcpy(recv_buffer, buffer, len * sizeof(char));

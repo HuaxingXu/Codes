@@ -4,7 +4,7 @@
 
 
 Voice::Voice() {
-    printf("Voice()\n");
+//    printf("Voice()\n");
     int quality = 8;
     speex_bits_init(&this->m_ebits);
     this->m_pEncState = speex_encoder_init(&speex_nb_mode);
@@ -18,7 +18,7 @@ Voice::Voice() {
 }
 
 Voice::~Voice() {
-    printf("~Voice()\n");
+//    printf("~Voice()\n");
     speex_bits_destroy(&this->m_ebits);
     speex_encoder_destroy(this->m_pEncState);
     speex_bits_destroy(&this->m_dbits);

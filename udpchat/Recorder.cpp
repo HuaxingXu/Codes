@@ -65,7 +65,7 @@ Recorder::~Recorder() {
  * return int output实际存放的数据数
  */
 int Recorder::record(char *output, int max_size) {
-    printf("Recorder::record()\n");
+//    printf("Recorder::record()\n");
     int loops;
     int rc;
     int size;
@@ -84,7 +84,7 @@ int Recorder::record(char *output, int max_size) {
                                              &val, &dir);
     loops = TIME / val;
     offset = 0;
-//    fp = fopen("data2.raw", "a");
+
     while (loops > 0) {
         loops--;
         rc = snd_pcm_readi(this->m_pHandle, buffer, this->m_frames);
@@ -103,11 +103,10 @@ int Recorder::record(char *output, int max_size) {
         if (offset + size > max_size) {
             break;
         }
-//        rc = fwrite(buffer, sizeof(char), size, fp);
         memcpy(output + offset, buffer, size);
         offset += size;
     }
     free(buffer);
-//    fclose(fp);
+
     return offset;
 }
