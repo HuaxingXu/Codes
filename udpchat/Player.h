@@ -10,13 +10,11 @@
 
 #include <alsa/asoundlib.h>
 
-#define CHANNELS 2 //双声道
-
 class Player {
 public:
     Player();
     ~Player();
-    void play(char *data, int len);//播放
+    void play(char *data, size_t count);//播放
 private:
     snd_pcm_t *m_pHandle;
     snd_pcm_hw_params_t *m_pParams;

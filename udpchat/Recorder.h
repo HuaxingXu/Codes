@@ -10,9 +10,6 @@
 
 #include <alsa/asoundlib.h>
 
-#define CHANNELS 2  //双声道
-#define TIME 60000 //每次发送的录音长度
-
 class Recorder {
 public:
     Recorder();

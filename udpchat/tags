@@ -5,6 +5,9 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ALLCONFS	nbproject/Makefile-impl.mk	/^ALLCONFS=Debug Release $/;"	m
+ALSA_OPT	Player.cpp	8;"	d	file:
+ALSA_PCM_NEW_HW_PARAMS_API	Player.cpp	1;"	d	file:
+ALSA_PCM_NEW_HW_PARAMS_API	Recorder.cpp	1;"	d	file:
 AS	nbproject/Makefile-Debug.mk	/^AS=as$/;"	m
 AS	nbproject/Makefile-Release.mk	/^AS=as$/;"	m
 ASFLAGS	nbproject/Makefile-Debug.mk	/^ASFLAGS=$/;"	m
@@ -29,10 +32,10 @@ CLEAN_SUBPROJECTS_	nbproject/Makefile-impl.mk	/^CLEAN_SUBPROJECTS_=.clean-subpro
 CLEAN_SUBPROJECTS_NO	nbproject/Makefile-impl.mk	/^CLEAN_SUBPROJECTS_NO=$/;"	m
 CND_ARTIFACT_DIR_Debug	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_DIR_Debug=dist\/Debug\/GNU-Linux-x86$/;"	m
 CND_ARTIFACT_DIR_Release	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_DIR_Release=dist\/Release\/GNU-Linux-x86$/;"	m
-CND_ARTIFACT_NAME_Debug	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_NAME_Debug=udpchat$/;"	m
-CND_ARTIFACT_NAME_Release	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_NAME_Release=udpchat$/;"	m
-CND_ARTIFACT_PATH_Debug	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_PATH_Debug=dist\/Debug\/GNU-Linux-x86\/udpchat$/;"	m
-CND_ARTIFACT_PATH_Release	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_PATH_Release=dist\/Release\/GNU-Linux-x86\/udpchat$/;"	m
+CND_ARTIFACT_NAME_Debug	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_NAME_Debug=udpchat_debug$/;"	m
+CND_ARTIFACT_NAME_Release	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_NAME_Release=udpchat_debug$/;"	m
+CND_ARTIFACT_PATH_Debug	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_PATH_Debug=dist\/Debug\/GNU-Linux-x86\/udpchat_debug$/;"	m
+CND_ARTIFACT_PATH_Release	nbproject/Makefile-variables.mk	/^CND_ARTIFACT_PATH_Release=dist\/Release\/GNU-Linux-x86\/udpchat_debug$/;"	m
 CND_BASEDIR	nbproject/Makefile-variables.mk	/^CND_BASEDIR=`pwd`$/;"	m
 CND_BUILDDIR	nbproject/Makefile-Debug.mk	/^CND_BUILDDIR=build$/;"	m
 CND_BUILDDIR	nbproject/Makefile-Release.mk	/^CND_BUILDDIR=build$/;"	m
@@ -46,10 +49,10 @@ CND_DLIB_EXT	nbproject/Makefile-Debug.mk	/^CND_DLIB_EXT=so$/;"	m
 CND_DLIB_EXT	nbproject/Makefile-Release.mk	/^CND_DLIB_EXT=so$/;"	m
 CND_PACKAGE_DIR_Debug	nbproject/Makefile-variables.mk	/^CND_PACKAGE_DIR_Debug=dist\/Debug\/GNU-Linux-x86\/package$/;"	m
 CND_PACKAGE_DIR_Release	nbproject/Makefile-variables.mk	/^CND_PACKAGE_DIR_Release=dist\/Release\/GNU-Linux-x86\/package$/;"	m
-CND_PACKAGE_NAME_Debug	nbproject/Makefile-variables.mk	/^CND_PACKAGE_NAME_Debug=udpchat.tar$/;"	m
-CND_PACKAGE_NAME_Release	nbproject/Makefile-variables.mk	/^CND_PACKAGE_NAME_Release=udpchat.tar$/;"	m
-CND_PACKAGE_PATH_Debug	nbproject/Makefile-variables.mk	/^CND_PACKAGE_PATH_Debug=dist\/Debug\/GNU-Linux-x86\/package\/udpchat.tar$/;"	m
-CND_PACKAGE_PATH_Release	nbproject/Makefile-variables.mk	/^CND_PACKAGE_PATH_Release=dist\/Release\/GNU-Linux-x86\/package\/udpchat.tar$/;"	m
+CND_PACKAGE_NAME_Debug	nbproject/Makefile-variables.mk	/^CND_PACKAGE_NAME_Debug=udpchatdebug.tar$/;"	m
+CND_PACKAGE_NAME_Release	nbproject/Makefile-variables.mk	/^CND_PACKAGE_NAME_Release=udpchatdebug.tar$/;"	m
+CND_PACKAGE_PATH_Debug	nbproject/Makefile-variables.mk	/^CND_PACKAGE_PATH_Debug=dist\/Debug\/GNU-Linux-x86\/package\/udpchatdebug.tar$/;"	m
+CND_PACKAGE_PATH_Release	nbproject/Makefile-variables.mk	/^CND_PACKAGE_PATH_Release=dist\/Release\/GNU-Linux-x86\/package\/udpchatdebug.tar$/;"	m
 CND_PLATFORM	nbproject/Makefile-Debug.mk	/^CND_PLATFORM=GNU-Linux-x86$/;"	m
 CND_PLATFORM	nbproject/Makefile-Release.mk	/^CND_PLATFORM=GNU-Linux-x86$/;"	m
 CND_PLATFORM_Debug	nbproject/Makefile-variables.mk	/^CND_PLATFORM_Debug=GNU-Linux-x86$/;"	m
@@ -61,20 +64,35 @@ CXX	nbproject/Makefile-Debug.mk	/^CXX=g++$/;"	m
 CXX	nbproject/Makefile-Release.mk	/^CXX=g++$/;"	m
 CXXFLAGS	nbproject/Makefile-Debug.mk	/^CXXFLAGS=$/;"	m
 CXXFLAGS	nbproject/Makefile-Release.mk	/^CXXFLAGS=$/;"	m
+DEBUG	Player.cpp	5;"	d	file:
+DEBUG	Player.cpp	6;"	d	file:
+DEBUG	Recorder.cpp	5;"	d	file:
+DEBUG	Recorder.cpp	6;"	d	file:
+DEBUG	UdpChat.cpp	7;"	d	file:
+DEBUG	UdpChat.cpp	8;"	d	file:
+DEBUG	UdpTransfer.cpp	6;"	d	file:
+DEBUG	UdpTransfer.cpp	7;"	d	file:
+DEBUG	Voice.cpp	4;"	d	file:
+DEBUG	Voice.cpp	5;"	d	file:
+DEBUG	test/udpclient.c	11;"	d	file:
 DEFAULTCONF	nbproject/Makefile-impl.mk	/^DEFAULTCONF=Debug$/;"	m
+DGTIME	UdpChat.cpp	11;"	d	file:
+DGTIME	UdpChat.cpp	12;"	d	file:
 FC	nbproject/Makefile-Debug.mk	/^FC=gfortran$/;"	m
 FC	nbproject/Makefile-Release.mk	/^FC=gfortran$/;"	m
 FFLAGS	nbproject/Makefile-Debug.mk	/^FFLAGS=$/;"	m
 FFLAGS	nbproject/Makefile-Release.mk	/^FFLAGS=$/;"	m
 FRAME_SIZE	Voice.h	13;"	d
-FRAME_SIZE	main.cpp	14;"	d	file:
 GREP	nbproject/Makefile-Debug.mk	/^GREP=grep$/;"	m
 GREP	nbproject/Makefile-Release.mk	/^GREP=grep$/;"	m
-HEAD_SIZE	main.cpp	15;"	d	file:
-LDFLAGS	Makefile	/^LDFLAGS=-lspeex -lm$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS= -pthread -lspeex -lm -lasound$/;"	m
 LDLIBSOPTIONS	nbproject/Makefile-Debug.mk	/^LDLIBSOPTIONS=$/;"	m
 LDLIBSOPTIONS	nbproject/Makefile-Release.mk	/^LDLIBSOPTIONS=$/;"	m
+Local_BUFFER_SIZE	UdpChat.h	21;"	d
 MAX_CHAR_SIZE	Voice.h	15;"	d
+MAX_LINE	test/testudp.c	11;"	d	file:
+MAX_LINE	test/udpclient.c	12;"	d	file:
+MAX_LINE	test/udpserver.c	11;"	d	file:
 MAX_SHORT_SIZE	Voice.h	14;"	d
 MKDIR	nbproject/Makefile-Debug.mk	/^MKDIR=mkdir$/;"	m
 MKDIR	nbproject/Makefile-Release.mk	/^MKDIR=mkdir$/;"	m
@@ -84,30 +102,96 @@ OBJECTDIR	nbproject/Makefile-Debug.mk	/^OBJECTDIR=${CND_BUILDDIR}\/${CND_CONF}\/
 OBJECTDIR	nbproject/Makefile-Release.mk	/^OBJECTDIR=${CND_BUILDDIR}\/${CND_CONF}\/${CND_PLATFORM}$/;"	m
 OBJECTFILES	nbproject/Makefile-Debug.mk	/^OBJECTFILES= \\$/;"	m
 OBJECTFILES	nbproject/Makefile-Release.mk	/^OBJECTFILES= \\$/;"	m
-PROJECTNAME	nbproject/Makefile-impl.mk	/^PROJECTNAME=udpchat$/;"	m
+PACKAGE_SIZE	UdpChat.h	22;"	d
+PLAYER_H	Player.h	9;"	d
+PROJECTNAME	nbproject/Makefile-impl.mk	/^PROJECTNAME=udpchat_debug$/;"	m
+Player	Player.cpp	/^Player::Player() {$/;"	f	class:Player
+Player	Player.h	/^class Player {$/;"	c
 RANLIB	nbproject/Makefile-Debug.mk	/^RANLIB=ranlib$/;"	m
 RANLIB	nbproject/Makefile-Release.mk	/^RANLIB=ranlib$/;"	m
+RECORDER_H	Recorder.h	9;"	d
+Recorder	Recorder.cpp	/^Recorder::Recorder() {$/;"	f	class:Recorder
+Recorder	Recorder.h	/^class Recorder {$/;"	c
+SLEEP_TIME	UdpTransfer.h	22;"	d
 SUBPROJECTS	nbproject/Makefile-impl.mk	/^SUBPROJECTS=${SUB_${SUB}}$/;"	m
 SUB_no	nbproject/Makefile-impl.mk	/^SUB_no=NO$/;"	m
+UDPCHAT_H	UdpChat.h	9;"	d
 UDPTRANSFER_H	UdpTransfer.h	9;"	d
+UDP_MAX_SIZE	UdpTransfer.h	21;"	d
+UDP_PORT	UdpChat.h	20;"	d
+UdpChat	UdpChat.cpp	/^UdpChat::UdpChat() : m_offset(0) {$/;"	f	class:UdpChat
+UdpChat	UdpChat.h	/^class UdpChat {$/;"	c
+UdpTransfer	UdpTransfer.cpp	/^UdpTransfer::UdpTransfer(const char *target_ip, int target_port, int local_port) {$/;"	f	class:UdpTransfer
 UdpTransfer	UdpTransfer.h	/^class UdpTransfer {$/;"	c
 VOICE_H	Voice.h	9;"	d
 Voice	Voice.cpp	/^Voice::Voice() {$/;"	f	class:Voice
 Voice	Voice.h	/^class Voice {$/;"	c
+_runRecording	UdpChat.cpp	/^void *UdpChat::_runRecording(void *obj) {$/;"	f	class:UdpChat
+_runRecving	UdpChat.cpp	/^void *UdpChat::_runRecving(void *obj) {$/;"	f	class:UdpChat
+addToLocalBuffer	UdpChat.cpp	/^void UdpChat::addToLocalBuffer(char *data, unsigned int len) {$/;"	f	class:UdpChat
+addToPlayBuffer	UdpChat.cpp	/^void UdpChat::addToPlayBuffer(char *data, unsigned int len) {$/;"	f	class:UdpChat
+beginRecordVoiceAysn	UdpChat.cpp	/^bool UdpChat::beginRecordVoiceAysn() {$/;"	f	class:UdpChat
+beginRecvVoiceAsyn	UdpChat.cpp	/^bool UdpChat::beginRecvVoiceAsyn() {$/;"	f	class:UdpChat
+buffer_size	Player.cpp	/^static snd_pcm_uframes_t buffer_size;$/;"	v	file:
+buffer_size	Recorder.cpp	/^static snd_pcm_uframes_t buffer_size;$/;"	v	file:
+buffer_time	Player.cpp	/^static unsigned int buffer_time = 500000; \/*每次采集500 ms语音*\/$/;"	v	file:
+buffer_time	Recorder.cpp	/^static unsigned int buffer_time = 500000;$/;"	v	file:
+channels	Player.cpp	/^static unsigned int channels =1; \/*改为单声道*\/$/;"	v	file:
+channels	Recorder.cpp	/^static unsigned int channels =1; \/*设置为单声道*\/$/;"	v	file:
 checkReturnCode	nbproject/Package-Debug.bash	/^function checkReturnCode$/;"	f
 checkReturnCode	nbproject/Package-Release.bash	/^function checkReturnCode$/;"	f
 copyFileToTmpDir	nbproject/Package-Debug.bash	/^function copyFileToTmpDir$/;"	f
 copyFileToTmpDir	nbproject/Package-Release.bash	/^function copyFileToTmpDir$/;"	f
-decode	Voice.cpp	/^int Voice::decode(char encoded[], int size, $/;"	f	class:Voice
-encode	Voice.cpp	/^int Voice::encode(short in[], int size, $/;"	f	class:Voice
-m_pDbits	Voice.h	/^    SpeexBits m_pDbits;$/;"	m	class:Voice
-m_pDecFrameSize	Voice.h	/^    int m_pDecFrameSize;\/\/解压时的帧大小$/;"	m	class:Voice
+decode	Voice.cpp	/^unsigned int Voice::decode(char encoded[], unsigned int size, $/;"	f	class:Voice
+encode	Voice.cpp	/^unsigned int Voice::encode(short in[], unsigned int size, $/;"	f	class:Voice
+m_dbits	Voice.h	/^    SpeexBits m_dbits;$/;"	m	class:Voice
+m_decFrameSize	Voice.h	/^    unsigned int m_decFrameSize;\/\/解压时的帧大小$/;"	m	class:Voice
+m_ebits	Voice.h	/^    SpeexBits m_ebits;$/;"	m	class:Voice
+m_encFrameSize	Voice.h	/^    unsigned int m_encFrameSize;\/\/压缩时的帧大小$/;"	m	class:Voice
+m_frames	Player.h	/^    snd_pcm_uframes_t m_frames;$/;"	m	class:Player
+m_frames	Recorder.h	/^    snd_pcm_uframes_t m_frames;$/;"	m	class:Recorder
+m_localBuffer	UdpChat.h	/^    char m_localBuffer[Local_BUFFER_SIZE];\/\/本地缓冲区$/;"	m	class:UdpChat
+m_localSin	UdpTransfer.h	/^    sockaddr_in m_localSin;$/;"	m	class:UdpTransfer
+m_offset	UdpChat.h	/^    int m_offset;\/\/当前缓冲数据的偏移量$/;"	m	class:UdpChat
 m_pDecState	Voice.h	/^    void *m_pDecState;$/;"	m	class:Voice
-m_pEbits	Voice.h	/^    SpeexBits m_pEbits;$/;"	m	class:Voice
-m_pEncFrameSize	Voice.h	/^    int m_pEncFrameSize;\/\/压缩时的帧大小$/;"	m	class:Voice
 m_pEncState	Voice.h	/^    void *m_pEncState;$/;"	m	class:Voice
-main	main.cpp	/^int main(int argc, char** argv) {$/;"	f
+m_pHandle	Player.h	/^    snd_pcm_t *m_pHandle;$/;"	m	class:Player
+m_pHandle	Recorder.h	/^    snd_pcm_t *m_pHandle;$/;"	m	class:Recorder
+m_pParams	Player.h	/^    snd_pcm_hw_params_t *m_pParams;$/;"	m	class:Player
+m_pParams	Recorder.h	/^    snd_pcm_hw_params_t *m_pParams;$/;"	m	class:Recorder
+m_player	UdpChat.h	/^    Player m_player;$/;"	m	class:UdpChat
+m_recordID	UdpChat.h	/^    pthread_t m_recordID;$/;"	m	class:UdpChat
+m_recvFd	UdpChat.h	/^    int m_recvFd;\/\/管道文件$/;"	m	class:UdpChat
+m_recvID	UdpChat.h	/^    pthread_t m_recvID;$/;"	m	class:UdpChat
+m_sendFd	UdpChat.h	/^    int m_sendFd;\/\/管道文件$/;"	m	class:UdpChat
+m_socket	UdpTransfer.h	/^    int m_socket;$/;"	m	class:UdpTransfer
+m_targetSin	UdpTransfer.h	/^    sockaddr_in m_targetSin;$/;"	m	class:UdpTransfer
+m_voice	UdpChat.h	/^    Voice m_voice;$/;"	m	class:UdpChat
+main	test/testbuffer.c	/^int main()$/;"	f
+main	test/testudp.c	/^int main(int argc, char *argv[])$/;"	f
+main	test/udpclient.c	/^int main(int argc, char *argv[])$/;"	f
+main	test/udpserver.c	/^int main(int argc, char *argv[])$/;"	f
+main	udpchat.cpp	/^int main(int argc, char **argv) {$/;"	f
 makeDirectory	nbproject/Package-Debug.bash	/^function makeDirectory$/;"	f
 makeDirectory	nbproject/Package-Release.bash	/^function makeDirectory$/;"	f
+my_fun	test/udpserver.c	/^void my_fun(char *p)$/;"	f
+period_size	Player.cpp	/^static snd_pcm_uframes_t period_size;$/;"	v	file:
+period_size	Recorder.cpp	/^static snd_pcm_uframes_t period_size;$/;"	v	file:
+period_time	Player.cpp	/^static unsigned int period_time = 100000; \/*每次read的语音长度是100 ms*\/$/;"	v	file:
+period_time	Recorder.cpp	/^static unsigned int period_time = 100000; \/*每次readi到的时间是100ms*\/$/;"	v	file:
+play	Player.cpp	/^void Player::play(char* data, size_t count_bytes) {$/;"	f	class:Player
+rate	Player.cpp	/^static unsigned int rate=16000;$/;"	v	file:
+rate	Recorder.cpp	/^static unsigned int rate=16000;$/;"	v	file:
+record	Recorder.cpp	/^int Recorder::record(char *output, int max_size) {$/;"	f	class:Recorder
+recv	UdpTransfer.cpp	/^unsigned int UdpTransfer::recv(char recv_buffer[], unsigned int max_recv_size) {$/;"	f	class:UdpTransfer
+resetTarget	UdpTransfer.cpp	/^void UdpTransfer::resetTarget(const char* target_ip, int target_port) {$/;"	f	class:UdpTransfer
+send	UdpTransfer.cpp	/^unsigned int UdpTransfer::send(char data[], unsigned int size) {$/;"	f	class:UdpTransfer
+sendVoice	UdpChat.cpp	/^void UdpChat::sendVoice(short data[], int count) {$/;"	f	class:UdpChat
 sh	nbproject/Makefile-variables.mk	/^ROOT:sh = test -f nbproject\/private\/Makefile-variables.mk || \\$/;"	m
+stopRecordVoice	UdpChat.cpp	/^void UdpChat::stopRecordVoice() {$/;"	f	class:UdpChat
+stopRecvVoice	UdpChat.cpp	/^void UdpChat::stopRecvVoice() {$/;"	f	class:UdpChat
+~Player	Player.cpp	/^Player::~Player() {$/;"	f	class:Player
+~Recorder	Recorder.cpp	/^Recorder::~Recorder() {$/;"	f	class:Recorder
+~UdpChat	UdpChat.cpp	/^UdpChat::~UdpChat() {$/;"	f	class:UdpChat
+~UdpTransfer	UdpTransfer.cpp	/^UdpTransfer::~UdpTransfer() {$/;"	f	class:UdpTransfer
 ~Voice	Voice.cpp	/^Voice::~Voice() {$/;"	f	class:Voice

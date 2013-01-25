@@ -3,13 +3,15 @@
 #include <cstdlib>
 
 #include "UdpTransfer.h"
+#define DEBUG
+#undef DEBUG
 /*
  * const char *target_ip 对方ip
  * int target_port 对方端口
  * int local_port 本地端口
  */
 UdpTransfer::UdpTransfer(const char *target_ip, int target_port, int local_port) {
-//    printf("UdpTransfer::UdpTransfer()\n");
+    printf("UdpTransfer::UdpTransfer()\n");
     //本地
     bzero(&this->m_localSin, sizeof(this->m_localSin));
     this->m_localSin.sin_family = AF_INET;
@@ -31,7 +33,7 @@ UdpTransfer::UdpTransfer(const char *target_ip, int target_port, int local_port)
 }
 
 UdpTransfer::~UdpTransfer() {
-//    printf("UdpTransfer::~UdpTransfer()\n");
+    printf("UdpTransfer::~UdpTransfer()\n");
     close(this->m_socket);
 }
 /**
@@ -51,7 +53,7 @@ void UdpTransfer::resetTarget(const char* target_ip, int target_port) {
  *
  * return int 成功发送的字节数
  */
-int UdpTransfer::send(char data[], int size) {
+unsigned int UdpTransfer::send(char data[], unsigned int size) {
 //    printf("UdpTransfer::send()\n");
     if (size > UDP_MAX_SIZE) {
         size = UDP_MAX_SIZE;
@@ -59,7 +61,7 @@ int UdpTransfer::send(char data[], int size) {
 
     socklen_t send_len = sizeof(struct sockaddr_in);
     char buffer[UDP_MAX_SIZE];
-    int data_len;
+    unsigned int data_len;
 
     bzero(buffer, UDP_MAX_SIZE);
     memcpy(buffer, data, size);
@@ -70,6 +72,9 @@ int UdpTransfer::send(char data[], int size) {
 
     data_len = sendto(this->m_socket, buffer, size, 0,
             (struct sockaddr *)&this->m_targetSin, send_len);
+#ifdef DEBUG
+	printf("[UdpTransfer send]send data=%d bytes\n",data_len);
+#endif
     usleep(SLEEP_TIME);
 //    printf("send data: %d bytes\n", data_len);
 
@@ -82,19 +87,26 @@ int UdpTransfer::send(char data[], int size) {
  *
  * return int 接收到的字节数
  */
-int UdpTransfer::recv(char recv_buffer[], int max_recv_size) {
+unsigned int UdpTransfer::recv(char recv_buffer[], unsigned int max_recv_size) {
 //    printf("UdpTransfer::recv()\n");
     if (max_recv_size > UDP_MAX_SIZE) {
         max_recv_size = UDP_MAX_SIZE;
     }
 
-    int len;
+    unsigned int len;
     char buffer[UDP_MAX_SIZE];
     socklen_t recv_len = sizeof(struct sockaddr_in);
     //接受数据
     bzero(buffer, UDP_MAX_SIZE);
+#ifdef DEBUG
+	printf("[UdpTransfer recv]max_recv_size= %d\n",max_recv_size);
+#endif
+	
     len = recvfrom(this->m_socket, buffer, max_recv_size, 0, 
             (struct sockaddr *)&this->m_targetSin, &recv_len);
+#ifdef DEBUG
+	printf("[UdpTransfer recv]recv len= %d\n",len);
+#endif
 
     char ip[50];
     strcpy(ip, (const char*)inet_ntoa(this->m_targetSin.sin_addr));

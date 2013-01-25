@@ -18,13 +18,13 @@ class Voice {
 public:
     Voice();
     ~Voice();
-    int encode(short in[], int size,
-                char encoded[], int max_buffer_size);//压缩语音流
-    int decode(char encoded[], int size,
-                short output[], int max_buffer_size);//解压语音流
+    unsigned int encode(short in[], unsigned int size,
+                char encoded[], unsigned int max_buffer_size);//压缩语音流
+    unsigned int decode(char encoded[], unsigned int size,
+                short output[], unsigned int max_buffer_size);//解压语音流
 private:
-    int m_encFrameSize;//压缩时的帧大小
-    int m_decFrameSize;//解压时的帧大小
+    unsigned int m_encFrameSize;//压缩时的帧大小
+    unsigned int m_decFrameSize;//解压时的帧大小
     void *m_pEncState;
     SpeexBits m_ebits;
     void *m_pDecState;

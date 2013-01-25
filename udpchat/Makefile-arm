@@ -1,0 +1,13 @@
+CC=arm-linux-
+CCFLAGS=-Wall
+CPPFLAGS=-I /opt/EmbedSky/4.3.3/include
+LDFLAGS=-L /opt/EmbedSky/4.3.3/lib -pthread -lspeex -lm -lasound
+
+all: udpchat
+	
+udpchat: udpchat.cpp Voice.cpp Voice.h UdpTransfer.cpp UdpTransfer.h UdpChat.cpp UdpChat.h Recorder.cpp Recorder.h Player.cpp Player.h
+	$(CC)g++ udpchat.cpp Voice.cpp UdpTransfer.cpp UdpChat.cpp Recorder.cpp Player.cpp $(CPPFLAGS) $(CCFLAGS) $(LDFLAGS) -o udpchat
+	$(CC)strip udpchat
+	
+clean:
+	rm udpchat #~/Desktop/udpchat

@@ -77,9 +77,9 @@ int main() {
     &val, &dir);
     /* 5 seconds in microseconds divided by
     * period time */
-    loops = 10000000 / val;
+    loops = 20000000 / val;
     printf("loops=%ld\n", loops);
-    FILE *fp = fopen("data2.raw", "r");
+    FILE *fp = fopen("recv.raw", "r");
     while (loops > 0) {
         loops--;
         rc = fread(buffer, sizeof(char), size, fp);

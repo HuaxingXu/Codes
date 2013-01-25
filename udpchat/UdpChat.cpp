@@ -3,25 +3,41 @@
 
 #include "UdpChat.h"
 #include "Recorder.h"
+#include "Player.h"
+#define DEBUG
+#undef DEBUG
+
+//调试函数运行时间
+#define DGTIME
+#undef DGTIME
+
+#ifdef DGTIME
+#include <time.h>
+#endif
 /*
  * const char *target_ip 对方ip
  * int target_port 对方使用的端口
  */
-UdpChat::UdpChat(const char *target_ip, int target_port, int local_port) 
-            : m_udpTransfer(target_ip, target_port, local_port), 
-                m_offset(0) {
-    printf("local using port %d\n", local_port);
+UdpChat::UdpChat() : m_offset(0) {
+    printf("UdpChat::UdpChat()\n");
+    //打开管道文件
+    this->m_sendFd = open("send.fifo", O_RDWR, 0775);
+    if (this->m_sendFd == -1) {
+        printf("send.fifo open fail\n");
+        exit(1);
+    }
+    this->m_recvFd = open("recv.fifo", O_RDWR, 0775);
+    if (this->m_recvFd == -1) {
+        printf("recv.fifo open fail\n");
+        exit(1);
+    }
 }
 
 UdpChat::~UdpChat() {
-}
-/*
- * 重置对方地址
- * const char *target_ip 对方ip
- * int target_port 对方使用的端口
- */
-void UdpChat::resetTarget(const char* target_ip, int target_port) {
-    this->m_udpTransfer.resetTarget(target_ip, target_port);
+    printf("UdpChat::~UdpChat()\n");
+    //关闭管道文件
+    close(this->m_sendFd);
+    close(this->m_recvFd);
 }
 
 /*
@@ -29,8 +45,8 @@ void UdpChat::resetTarget(const char* target_ip, int target_port) {
  * char *data 语音流数据
  * int len 数据长度
  */
-void UdpChat::addToPlayBuffer(char *data, int len) {
-//    printf("UdpChat::addToPlayBuffer()\n");
+void UdpChat::addToPlayBuffer(char *data, unsigned int len) {
+    printf("UdpChat::addToPlayBuffer()\n");
     this->m_player.play(data, len);
 }
 /*
@@ -38,9 +54,11 @@ void UdpChat::addToPlayBuffer(char *data, int len) {
  * char *data 语音流数据
  * int len 数据长度
  */
-void UdpChat::addToLocalBuffer(char* data, int len) {
+void UdpChat::addToLocalBuffer(char *data, unsigned int len) {
     if (this->m_offset + len >= Local_BUFFER_SIZE) {
-        addToPlayBuffer(this->m_localBuffer, this->m_offset);
+//        addToPlayBuffer(this->m_localBuffer, this->m_offset);
+//这里没必要再封装一层函数了
+		this->m_player.play(this->m_localBuffer , this->m_offset);
         this->m_offset = 0;
     }
     memcpy(this->m_localBuffer + this->m_offset,
@@ -64,20 +82,45 @@ bool UdpChat::beginRecvVoiceAsyn() {
 void *UdpChat::_runRecving(void *obj) {
 //    printf("UdpChat::_runRecving()\n");
     UdpChat *uc = (UdpChat *)obj;
-    char recv_buffer[UDP_MAX_SIZE];
+    char recv_buffer[PACKAGE_SIZE];
     short decoded[MAX_SHORT_SIZE];
     int recv_len;
     int decoded_count;
-//    FILE *fp = fopen("recv.raw", "a");
+
+//    FILE *fp = fopen("data.raw", "a");
 //    int write_count;
-    //等待接收
+//    等待接收
     do {
-        recv_len = uc->m_udpTransfer.recv(recv_buffer, UDP_MAX_SIZE);
+
+#ifdef DGTIME
+		clock_t start, end;
+		start = clock();
+#endif
+        recv_len = read(uc->m_recvFd, recv_buffer, PACKAGE_SIZE);
+
+#ifdef DGTIME
+		end = clock();
+		printf("[_runRecving]recv time:%lf us\n",(double)((double)end - (double)start)/CLOCKS_PER_SEC*1000000);
+#endif
+
+
+#ifdef DEBUG
+		printf("[UdpChat _runRecving]recv_len= %d\n",recv_len);
+#endif
+
+#ifdef DGTIME
+		start = clock();
+#endif
         //将收到的数据解压
         decoded_count = uc->m_voice.decode(recv_buffer, recv_len, decoded, MAX_SHORT_SIZE);
         //将数据拷贝到本地的一个缓冲区
         uc->addToLocalBuffer((char *)decoded, decoded_count * 2);
-        
+
+#ifdef DGTIME
+		end = clock();
+		printf("[_runRecving]decode + addToLocalBuffer time:%lf us\n",(double)((double)end - (double)start)/CLOCKS_PER_SEC*1000000);
+#endif
+       
 //        write_count = fwrite(decoded, sizeof(short), decoded_count, fp);
 //        if (write_count != decoded_count) {
 //            printf("short write: %d <--- %d\n", write_count, decoded_count);
@@ -91,8 +134,10 @@ void *UdpChat::_runRecving(void *obj) {
  * 停止接收操作
  */
 void UdpChat::stopRecvVoice() {
-    printf("UdpChat::stopRecvVoice %lu\n", this->m_recvID);
-    pthread_cancel(this->m_recvID);
+    if (this->m_recvID != 0) {
+        printf("UdpChat::stopRecvVoice %lu\n", this->m_recvID);
+        pthread_cancel(this->m_recvID);
+    }
 }
 /*
  * 发送语音流
@@ -107,9 +152,14 @@ void UdpChat::sendVoice(short data[], int count) {
     char encoded[MAX_CHAR_SIZE];
     int byte_count;
     //压缩语音数据
+
     byte_count = this->m_voice.encode(data, count, encoded, MAX_CHAR_SIZE);
+
     //发送语音数据
-    this->m_udpTransfer.send(encoded, byte_count);
+    int write_len = write(this->m_sendFd, encoded, byte_count);
+#ifdef DEBUG
+    printf("[UdpChat sendVoice]write_len=%d\n", write_len);
+#endif
 }
 /*
  * 创建线程后台进行录音操作
@@ -131,8 +181,29 @@ void *UdpChat::_runRecording(void *obj) {
     Recorder rc = Recorder();
     char record_data[MAX_CHAR_SIZE];
     while (true) {
+
+#ifdef DGTIME
+		clock_t start,end;
+		start = clock();
+#endif
         size_t read_count = rc.record(record_data, MAX_CHAR_SIZE);
+
+#ifdef DGTIME
+		end = clock();
+		printf("[_runRecording]record time:%lf us\n",(double)((double)end - (double)start)/CLOCKS_PER_SEC*1000000);
+#endif
+
+#ifdef DGTIME
+		start = clock();
+#endif
+
         uc->sendVoice((short *)record_data, read_count / 2);
+
+#ifdef DGTIME
+		end = clock();
+		printf("[_runRecording]send time:%lf us\n",(double)((double)end - (double)start)/CLOCKS_PER_SEC*1000000);
+#endif
+
     }
     pthread_exit(NULL);
 }
@@ -140,6 +211,8 @@ void *UdpChat::_runRecording(void *obj) {
  * 停止录音操作
  */
 void UdpChat::stopRecordVoice() {
-    printf("UdpChat::stopRecordVoice %lu\n", this->m_recordID);
-    pthread_cancel(this->m_recordID);
+    if (this->m_recordID != 0) {
+        printf("UdpChat::stopRecordVoice %lu\n", this->m_recordID);
+        pthread_cancel(this->m_recordID);
+    }
 }

@@ -2,7 +2,7 @@
 使用说明：
 1. 配置环境（里面使用到speex语音压缩开源项目）
     a) 下载 speex，网址： http://www.speex.org/downloads/
-    b) 安装
+    b) 安装 speex
         tar zxvf speex-1.2rc1.tar.gz
         cd speex-1.2rc1
         ./configure --prefix=/home/yzf/lib/speex   (路径改成自己喜欢的)
@@ -14,6 +14,17 @@
             libspeex.so  :  ln -s libspeex.so.1.5.0 libspeex.so
             libspeex.so.1  :  ln -s libspeex.so.1.5.0 libspeex.so.1
         因为有些系统-lspeex使用的是 libspeex.so，有些则是 libspeex.so.1
+    *c) 下载 alsa，网址：ftp://ftp.alsa-project.org/pub/lib/
+    *d) 安装 alsa 
+        tar jxvf alsa-lib-1.0.24.1.tar.bz2
+        cd alsa-lib-1.0.24.1
+        ./configure --prefix=/home/yzf/lib/alsa
+        make && make install
+        编译安装后，把/home/yzf/lib/alsa/include 下的文件拷贝到 /usr/include下
+        把/home/yzf/lib/alsa/lib/libasound.so.2.0.0 拷贝到 /usr/lib下
+        并建立该文件的软链接
+        ln -s libasound.so.2.0.0 libasound.so
+    *为可选项目，因为有些系统已经自带了这些库
 
 2. 编译程序
     cd udpchat
